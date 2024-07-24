@@ -1,1 +1,1 @@
-# typescriptTest
+# JavaScript Tutorial
