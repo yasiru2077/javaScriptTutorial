@@ -1,43 +1,58 @@
-console.log("hey");
+function createBank() {
+  let balance = 0;
 
-// undefined : variable is declared but no value is assigned
-let userAge;
-console.log(userAge);
-
-// null : value is assiged ("no value" or "empty value")
-let userEmail = null;
-console.log(userEmail);
-
-let isLooseEqual = 5 == "5";
-
-console.log(isLooseEqual);
-
-function greet(name) {
-  return `Hello, ${name}!`;
+  return {
+    deposit: function (amount) {
+      balance += amount;
+    },
+    withdraw: function (amount) {
+      if (balance >= amount) {
+        balance -= amount;
+        return amount;
+      } else {
+        return console.log("balance is too low");
+      }
+    },
+    getBalance: function () {
+      return balance;
+    },
+  };
 }
 
-const sayHi = function(name) {
-    return `Hi, ${name}!`;
+const myBank = createBank();
+myBank.deposit(1000);
+
+console.log(myBank.getBalance());
+
+let person = {
+  name: "noel",
+  age: 20,
+  city: "galle",
 };
 
-let globalVar = "I'm global";
+console.log(person);
+console.log(person.city);
 
-function scopeExample() {
-    let localVar = "I'm local";
-    console.log(globalVar);  // Accessible
-    console.log(localVar);   // Accessible
+const personNew = {
+  name: "noel",
+  age: 20,
+  city: "galle",
+  sayHello: function () {
+    return `Hello! Iam ${this.name}`;
+  },
+};
+
+console.log(personNew.sayHello());
+
+const fruitsNew = ["apple", "banana", "orange"];
+
+fruitsNew.push("grape");
+
+for (let index = 0; index < fruitsNew.length; index++) {
+    const element = fruitsNew[index];
+    console.log(fruitsNew.pop(element));    
 }
 
-function createCounter() {
-    let count = 0;
-    return function() {
-        return ++count;
-    };
-}
-
-const counter = createCounter();
-console.log(counter()); // 1
-console.log(counter()); // 2
-console.log(counter()); // 2
+console.log(fruitsNew);
 
 
