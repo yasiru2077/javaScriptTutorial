@@ -46,13 +46,20 @@ console.log(personNew.sayHello());
 
 const fruitsNew = ["apple", "banana", "orange"];
 
-fruitsNew.push("grape");
+// fruits.push("grape");            // Add to end
+// fruits.pop();                    // Remove from end
+// fruits.unshift("lemon");         // Add to start
+// fruits.shift();                  // Remove from start
 
-for (let index = 0; index < fruitsNew.length; index++) {
-    const element = fruitsNew[index];
-    console.log(fruitsNew.pop(element));    
-}
+// for (let index = 0; index < fruitsNew.length; index++) {
+//     const element = fruitsNew[index];
+//     console.log(fruitsNew.pop(element));    
+// }
 
-console.log(fruitsNew);
+// console.log(fruitsNew);
+
+fruitsNew.forEach(fruitsNew => console.log(fruitsNew));
+const upperFruits = fruitsNew.map(fruitsNew => fruitsNew.toUpperCase());
+console.log(upperFruits);
 
 
