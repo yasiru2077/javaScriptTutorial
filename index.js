@@ -86,5 +86,26 @@ let doubled = arr.map((num) => num * 2);
 let evenNums = arr.filter((num) => num % 2 === 0);
 console.log(evenNums);
 
+//this only filter the first element
 let found = arr.find((num) => num > 2);
 console.log(found);
+
+// how to reverse and array
+const reverseEx = [1, 2, 3, 4, 5];
+
+// using reverse method
+// reverseEx.reverse();
+// using spread operator (create a new array to store the reversed one)
+// const reversed = [...reverseEx].reverse();
+// console.log("reversed:",reversed);
+
+// 3. Using a loop (if you want to do it manually)
+
+for (let index = 0; index < Math.floor(reverseEx.length / 2); index++) {
+  [reverseEx[index], reverseEx[reverseEx - 1 - index]] = [
+    reverseEx[reverseEx.length - 1 - index],
+    reverseEx[index],
+  ];
+}
+
+console.log(reverseEx);
