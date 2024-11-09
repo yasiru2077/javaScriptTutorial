@@ -53,13 +53,38 @@ const fruitsNew = ["apple", "banana", "orange"];
 
 // for (let index = 0; index < fruitsNew.length; index++) {
 //     const element = fruitsNew[index];
-//     console.log(fruitsNew.pop(element));    
+//     console.log(fruitsNew.pop(element));
 // }
 
 // console.log(fruitsNew);
 
-fruitsNew.forEach(fruitsNew => console.log(fruitsNew));
-const upperFruits = fruitsNew.map(fruitsNew => fruitsNew.toUpperCase());
+fruitsNew.forEach((fruitsNew) => console.log(fruitsNew));
+const upperFruits = fruitsNew.map((fruitsNew) => fruitsNew.toUpperCase());
 console.log(upperFruits);
 
+let numbers = [1, 2, 3, 4, 5];
+let colors = ["red", "blue", "green"];
 
+let car = {
+  brand: "Toyota",
+  model: "Camry",
+  year: 2020,
+  isElectric: false,
+};
+
+console.log(car.brand);
+console.log(numbers.length);
+
+for (let num of numbers) {
+  console.log(num);
+}
+
+let arr = [1, 2, 3, 4, 5, 6];
+
+let doubled = arr.map((num) => num * 2);
+
+let evenNums = arr.filter((num) => num % 2 === 0);
+console.log(evenNums);
+
+let found = arr.find((num) => num > 2);
+console.log(found);
