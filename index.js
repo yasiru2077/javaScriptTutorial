@@ -1,3 +1,4 @@
+
 function createBank() {
   let balance = 0;
 
@@ -101,11 +102,7 @@ const reverseEx = [1, 2, 3, 4, 5];
 
 // 3. Using a loop (if you want to do it manually)
 
-for (let index = 0; index < Math.floor(reverseEx.length / 2); index++) {
-  [reverseEx[index], reverseEx[reverseEx - 1 - index]] = [
-    reverseEx[reverseEx.length - 1 - index],
-    reverseEx[index],
-  ];
-}
+// pointer method
 
-console.log(reverseEx);
+
+
