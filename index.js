@@ -107,13 +107,13 @@ let start = 0;
 let end = reverseEx.length - 1;
 
 while (start < end) {
+    // Swap elements at the start and end positions
   let temp = reverseEx[start];
   reverseEx[start] = reverseEx[end];
   reverseEx[end] = temp;
   start++
   end--
-  console.log(reverseEx);
-  
+  console.log(reverseEx); 
 }
 
 console.log(reverseEx);
