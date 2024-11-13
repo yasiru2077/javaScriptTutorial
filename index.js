@@ -108,13 +108,19 @@ let end = reverseEx.length - 1;
 
 while (start < end) {
     // Swap elements at the start and end positions
-  let temp = reverseEx[start];
-  reverseEx[start] = reverseEx[end];
-  reverseEx[end] = temp;
-  start++
-  end--
-  console.log(reverseEx); 
+  let temp = reverseEx[start]; // store the start element in a temporary variable 
+  reverseEx[start] = reverseEx[end]; // move the element at 'end' to 'start' 
+  reverseEx[end] = temp; // move the element on the temp to end
+  start++ // move start pointer to the right
+  end-- //move end pointer to the left
 }
 
 console.log(reverseEx);
 
+// function reverseArrayRecursive(arr,start=0,end=arr.length){
+
+// if(){
+
+// }
+
+// }
