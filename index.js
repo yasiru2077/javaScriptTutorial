@@ -117,22 +117,25 @@ while (start < end) {
 
 console.log(reverseEx);
 
+const reverseEx1 = [1, 2, 3, 4, 5];
+
 function reverseArrayRecursive(
-  reverseEx,
+  reverseEx1,
   start = 0,
-  end = reverseEx.length - 1
+  end = reverseEx1.length - 1
 ) {
-  
+  // Base case: Stop recursion when start meets or exceeds end
   if (start >= end) {
-    return console.log(reverseEx);
+    return reverseEx1;
   }
 
-  let temp = reverseEx[start];
-  reverseEx[start] = reverseEx[end];
-  reverseEx[end] = temp;
+  // Swap the elements at start and end
+  let temp = reverseEx1[start];
+  reverseEx1[start] = reverseEx1[end];
+  reverseEx1[end] = temp;
 
-  return reverseArrayRecursive(reverseEx, start + 1, end - 1);
+  // Recursive call: move start forward and end backward
+  return reverseArrayRecursive(reverseEx1, start + 1, end - 1);
 }
 
-console.log(reverseArrayRecursive(reverseEx));
-
+console.log(reverseArrayRecursive([...reverseEx1]));
