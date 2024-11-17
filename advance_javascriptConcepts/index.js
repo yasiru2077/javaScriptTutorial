@@ -33,7 +33,7 @@ a sequential manner code that wait for an operation to complete*/
 // asynchronous allows operations to performed concurrently without waiting.
 // it does not block the execution flow and allows the program to continue.
 
-// asynchronous operations
+// asynchronous operations - query a data base, fetching a file,gathering resources
 
 // timeouts
 
@@ -49,7 +49,7 @@ function fetchData(callback) {
   }, 1000);
 }
 
-fetchData(data=>console.log(data))
+fetchData((data) => console.log(data));
 
 // callback and timeouts use in a single operation
 
@@ -69,8 +69,50 @@ function func2() {
 
 func1(func2);
 
+// Promise = An object that manages asynchronous operations.
+// Wrap a promise Object around asynchronous code
+// promise object promise to return a value
+// In a use case if there is a task if the task is resovled
 
-// Promises
+// let myPromise = new Promise(function (myResolve, myReject) {
+//   // "Producing Code" (May take some time)
 
-console.log();
+//   myResolve(); // when successful
+//   myReject(); // when error
+// });
 
+// "Consuming Code" (Must wait for a fulfilled Promise)
+// myPromise.then(
+//   function (value) {
+//     /* code if successful */
+//     console.log("successful");
+
+//   },
+//   function (error) {
+//     /* code if some error */
+//     console.log("error");
+
+//   }
+// );
+
+// example simulate ordering a pizza
+
+function orderPizza(pizzaType) {
+  return new Promise((resolve, reject) => {
+    console.log(`Ordering a ${pizzaType} pizza`); // what is trying to achieve
+    
+    setTimeout(()=>{
+      if (pizzaType) {
+        resolve(`${pizzaType} pizza is ready! 🍕`)
+      } else {
+        Reflect("You didn't choose a pizza! 😞")
+      }
+    },3000) // simulate a 3 second delay
+  });
+}
+
+orderPizza("Pepperoni").then((message)=>{
+  console.log(message);
+  console.log();
+  
+})
