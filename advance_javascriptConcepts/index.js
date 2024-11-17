@@ -43,6 +43,16 @@ console.log("End");
 
 // callback
 
+function fetchData(callback) {
+  setTimeout(() => {
+    callback("Data fetched");
+  }, 1000);
+}
+
+fetchData(data=>console.log(data))
+
+// callback and timeouts use in a single operation
+
 function func1(callback) {
   setTimeout(() => {
     console.log("Task 1");
@@ -58,3 +68,9 @@ function func2() {
 }
 
 func1(func2);
+
+
+// Promises
+
+console.log();
+
