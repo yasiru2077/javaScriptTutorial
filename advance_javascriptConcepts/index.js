@@ -100,19 +100,41 @@ func1(func2);
 function orderPizza(pizzaType) {
   return new Promise((resolve, reject) => {
     console.log(`Ordering a ${pizzaType} pizza`); // what is trying to achieve
-    
-    setTimeout(()=>{
+
+    setTimeout(() => {
       if (pizzaType) {
-        resolve(`${pizzaType} pizza is ready! 🍕`)
+        resolve(`${pizzaType} pizza is ready! 🍕`);
       } else {
-        Reflect("You didn't choose a pizza! 😞")
+        reject("You didn't choose a pizza! 😞");
       }
-    },3000) // simulate a 3 second delay
+    }, 3000); // simulate a 3 second delay
   });
 }
 
-orderPizza("Pepperoni").then((message)=>{
-  console.log(message);
-  console.log();
-  
-})
+orderPizza("")
+  .then((message) => {
+    console.log(message);
+    console.log("Eating the pizza! ❤️😁👍");
+  })
+  .catch((error) => {
+    console.error(error);
+  })
+  .finally(() => {
+    console.log("Done with the pizza process!");
+  });
+
+//  Async/Await
+
+// A cleaner syntax for working with promises.
+
+async function fetchData() {
+  try {
+    const data = await new Promise((resolve) => resolve("Fetched data"));
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+fetchData();
+
