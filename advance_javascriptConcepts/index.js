@@ -111,7 +111,7 @@ function orderPizza(pizzaType) {
   });
 }
 
-orderPizza("")
+orderPizza("peperoni")
   .then((message) => {
     console.log(message);
     console.log("Eating the pizza! ❤️😁👍");
@@ -137,4 +137,49 @@ async function fetchData() {
 }
 
 fetchData();
+
+// Keyword, Prototypes, and Inheritance
+
+const obj = {
+  name: "Alice",
+  greet() {
+    console.log(`Hello, ${this.name}`);
+  },
+};
+obj.greet(); // Hello, Alice
+
+// Prototypes
+
+function Person(name) {
+  this.name = name;
+}
+
+Person.prototype.greet = function (params) {
+  console.log(`Hello, ${this.name}`);
+};
+
+const alice = new Person("Alison");
+alice.greet(); // Hello, Alice
+
+// Inheritance
+
+// Extending objects or classes to create specialized ones.
+
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  speak() {
+    console.log(`${this.name} makes a sound`);
+  }
+}
+class Dog extends Animal {
+  speak() {
+    console.log(`${this.name} barks`);
+  }
+}
+const dog = new Dog("Rex");
+dog.speak(); // Rex barks
+
+// Error Handing and Debugging
 
