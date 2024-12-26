@@ -24,11 +24,16 @@ function FormInput() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setUser((prevUser) => ({
       ...prevUser,
       [name]: value,
     }));
   };
+
+  console.log(user.name);
+  console.log(user.age);
+  console.log(user.email);
 
   return (
     <div>
@@ -52,8 +57,25 @@ function FormInput() {
           onChange={handleChange}
         />
       </form>
+      <br />
+      <FormInputArray />
     </div>
   );
 }
 
 export default FormInput;
+
+export function FormInputArray() {
+  const [todos, setTodos] = useState([]);
+  const [input, setInput] = useState("");
+
+  const addTodo = () => {
+    if (input.trim() === "") return;
+
+    setTodos(prevTodo=>[
+      ...prevTodos,
+    ])
+  };
+
+  return <div></div>;
+}
