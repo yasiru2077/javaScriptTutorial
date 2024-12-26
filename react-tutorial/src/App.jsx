@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Children, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -6,11 +6,26 @@ import Tutorial from "./Tutorial";
 import FormInput from "./FormInput";
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path:'/',
+      Element:<Layout/>,
+      Children:[
+        {index:true,Element:<Tutorial/>}
+      ]
+    }
+  ])
   return (
+
+
+   
+
     <>
-      <Tutorial />
+      {/* <Tutorial />
       <br />
-      <FormInput />
+      <FormInput /> */}
+
+
     </>
   );
 }

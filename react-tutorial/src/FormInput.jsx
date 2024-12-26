@@ -72,10 +72,54 @@ export function FormInputArray() {
   const addTodo = () => {
     if (input.trim() === "") return;
 
-    setTodos(prevTodo=>[
+    setTodos((prevTodos) => [
       ...prevTodos,
-    ])
+      { id: Date.now(), text: input, completed: false },
+    ]);
+    setInput("");
   };
 
-  return <div></div>;
+  const removeTodo = (id) => {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+  };
+
+  const toggleTodo = (id) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={input}
+        onChange={(e) => {
+          setInput(e.target.value);
+        }}
+      />
+      <button onClick={addTodo}>+</button>
+      <ul>
+        {todos.map((todo) => (
+          <li key={todo.id}>
+            <input
+              type="checkbox"
+              checked={todo.completed}
+              onChange={() => toggleTodo(todo.id)}
+            />
+            <span
+              style={{
+                textDecoration: todo.completed ? "line-through" : "none",
+              }}
+            >
+              {todo.text}
+            </span>
+            <button onClick={() => removeTodo(todo.id)}>Delete</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
