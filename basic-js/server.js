@@ -43,4 +43,10 @@ console.log("second:", fruits[1]);
 const user = { name: "Tom", age: 22 };
 console.log(user.name);
 
+const users = { name: 'Alice', age: 30 };
+const { name, age } = users;
+
+console.log(users.name);
+
+
 
