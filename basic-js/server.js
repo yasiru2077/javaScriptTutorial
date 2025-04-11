@@ -30,7 +30,7 @@ for (let index = 0; index < item.length; index++) {
 }
 
 item.forEach((item) => console.log(item));
-item1.map((i) => console.log("map",i));
+item1.map((i) => console.log("map", i));
 
 // Arrays & Objects
 
@@ -43,10 +43,53 @@ console.log("second:", fruits[1]);
 const user = { name: "Tom", age: 22 };
 console.log(user.name);
 
-const users = { name: 'Alice', age: 30 };
+// Destructuring
+
+const users = { name: "Alice", age: 30 };
 const { name, age } = users;
 
 console.log(users.name);
+
+// Template Literals
+
+const msg = `Hello, ${users.name}`;
+
+console.log(msg);
+
+// Spread Operator
+
+const arr = [1, 2];
+
+const newArr = [...arr, 3];
+
+console.log(newArr);
+
+// Function Expression
+
+const firstName = "jane";
+
+const greet1 = function (params) {
+  return `Hello, ${params}`;
+};
+
+greet1(firstName);
+
+const greet2 = (name) => `Hell, ${name}`;
+
+greet2(firstName);
+
+// Asynchronous JavaScript
+
+// setTimeout
+
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Times up");
+}, 3000);
+
+console.log("End");
+
 
 
 
