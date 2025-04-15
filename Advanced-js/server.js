@@ -3,22 +3,34 @@
 // Lexical Scope
 
 function outer() {
-    let outerVar = "I am outer";
-    
-    function inner() {
-      console.log(outerVar); // Accessible due to lexical scope
-    }
-    
-    inner();
+  let outerVar = "I am outer";
+
+  function inner() {
+    console.log(outerVar); // Accessible due to lexical scope
   }
-  
- console.log(outer()); 
+
+  inner();
+}
+
+outer();
 
 // Closures
 
-function outer() {
-    // let count 
+function Closures() {
+  let count = 0;
+
+  return function inner() {
+    count++;
+    console.log(count);
+  };
 }
+
+const counter = Closures();
+
+counter();
+counter();
+counter(); 
+
 
 // Synchronous VS. Asynchronous JavaScript
 
