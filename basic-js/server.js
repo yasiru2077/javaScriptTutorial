@@ -19,18 +19,29 @@ add(2, 4);
 // loops
 const item = ["apple", "banana", "cherry"];
 
-const item1 = [
-  ["x", "y", "z"],
-  ["x1", "y1", "z1"],
-];
+const item1 = [["x"], ["x", "y"], ["x", "y", "z"], ["x1", "y1", "z1", "r1"]];
 
 for (let index = 0; index < item.length; index++) {
   const element = item[index];
   console.log(element);
 }
 
-item.forEach((item) => console.log(item));
-item1.map((i) => console.log("map", i));
+console.log("second items list:");
+for (let index = 0; index < item1.length; index++) {
+  const element = item1[index];
+
+  console.log(element);
+  // while (condition) {
+
+  // }
+  for (let index = 0; index < element.length; index++) {
+    const element2 = element[index];
+    console.log(element2);
+  }
+}
+
+item.forEach((item) => console.log("foreach:", item));
+item1.map((i) => console.log("map:", i));
 
 // Arrays & Objects
 
@@ -187,6 +198,3 @@ class Animal {
 const myAnimal = new Animal("Cow", "Mow");
 
 console.log(myAnimal.makeSound());
-
-
-

@@ -103,6 +103,8 @@ func1(func2);
 
 // Async/Await
 
+// "this" keyword
+
 const obj = {
   name: "Alice",
   greet() {
@@ -112,6 +114,44 @@ const obj = {
 
 obj.greet();
 
-// const greetFunction = obj.greet;
+const greetFunction = obj.greet;
 
-// greetFunction();
+greetFunction();
+
+// Binding "this" (controlling value of "this")
+
+const boundGreet = obj.greet.bind(obj);
+
+boundGreet();
+
+const obj2 = {
+  name: "Bob",
+  delayedGreet() {
+    setTimeout(() => {
+      console.log(`Hello, ${this.name}`);
+    }, 1000);
+  },
+};
+
+obj2.delayedGreet();
+
+const greetDelayedFunction = obj2.delayedGreet.bind(obj2);
+
+greetDelayedFunction();
+
+function introduce(greeting) {
+  console.log(`${greeting}, I am ${this.name}`);
+}
+
+introduce.call(obj, "hi");
+introduce.call(obj, ["Hello"]);
+
+// Prototypes and inheritance
+
+// Constructor Functions and Prototypes
+
+function Person(name) {
+  this.name = name;
+}
+
+
