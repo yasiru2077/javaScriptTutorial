@@ -34,10 +34,12 @@ for (let index = 0; index < item1.length; index++) {
   // while (condition) {
 
   // }
+  let word = "";
   for (let index = 0; index < element.length; index++) {
     const element2 = element[index];
-    console.log(element2);
+    word += element2;
   }
+  console.log(word);
 }
 
 item.forEach((item) => console.log("foreach:", item));
