@@ -45,6 +45,28 @@ for (let index = 0; index < item1.length; index++) {
 item.forEach((item) => console.log("foreach:", item));
 item1.map((i) => console.log("map:", i));
 
+// two pointer method
+
+const numbers = [1, 2, 3, 4, 5];
+
+function arrayReverseTwiPointer(number) {
+  let first = 0;
+  let last = number.length - 1;
+  let temp;
+  for (let index = 0; index > number.length; index++) {
+    temp = number[first];
+    number[last] = number[first];
+    number[last] = temp;
+
+    first += 1;
+    last -= 1;
+    
+  }
+  return console.log("values:",number);
+}
+
+arrayReverseTwiPointer(numbers);
+
 // Arrays & Objects
 
 const fruits = [`apple`, `banana`];
