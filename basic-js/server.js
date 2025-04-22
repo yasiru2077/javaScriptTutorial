@@ -50,22 +50,17 @@ item1.map((i) => console.log("map:", i));
 const numbers = [1, 2, 3, 4, 5];
 
 function arrayReverseTwiPointer(number) {
-  let first = 0;
-  let last = number.length - 1;
   let temp;
-  for (let index = 0; index > number.length; index++) {
+  for (let first = 0, last = number.length - 1; first < last; first++, last--) {
     temp = number[first];
-    number[last] = number[first];
+    number[first] = number[last];
     number[last] = temp;
-
-    first += 1;
-    last -= 1;
-    
   }
-  return console.log("values:",number);
+  return number;
 }
 
-arrayReverseTwiPointer(numbers);
+const twoPointers=arrayReverseTwiPointer(numbers);
+console.log("reverse array:", twoPointers);
 
 // Arrays & Objects
 
