@@ -59,7 +59,7 @@ function arrayReverseTwiPointer(number) {
   return number;
 }
 
-const twoPointers=arrayReverseTwiPointer(numbers);
+const twoPointers = arrayReverseTwiPointer(numbers);
 console.log("reverse array:", twoPointers);
 
 // Arrays & Objects
@@ -93,6 +93,16 @@ const arr = [1, 2];
 const newArr = [...arr, 3];
 
 console.log(newArr);
+
+const numbersArr = [1, 2, 3, 4, 5, 6, 7];
+
+const newNumbersArr = [8, 9, 10];
+
+const newNumbersArr1 = [11, 12, 13, 14];
+
+const connected = [...numbersArr, ...newNumbersArr, ...newNumbersArr1];
+
+console.log(connected);
 
 // Function Expression
 
