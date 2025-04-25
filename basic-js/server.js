@@ -148,6 +148,8 @@ async function fetchUsers() {
   console.log(data[0]);
 }
 
+
+
 fetchUsers();
 
 // Array Method
