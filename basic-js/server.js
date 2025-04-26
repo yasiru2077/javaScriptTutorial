@@ -148,9 +148,18 @@ async function fetchUsers() {
   console.log(data[0]);
 }
 
+const fetchArrowFun = async () => {
+  try {
+    const res = await fetch("https://jsonplaceholder.typicode.com/users");
+    const data = await res.json();
+    console.log(data[0]);
+  } catch (error) {
+    console.error("error is:",error);
+  }
+};
 
-
-fetchUsers();
+// fetchUsers();
+fetchArrowFun();
 
 // Array Method
 
