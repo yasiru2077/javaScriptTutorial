@@ -154,7 +154,7 @@ const fetchArrowFun = async () => {
     const data = await res.json();
     console.log(data[0]);
   } catch (error) {
-    console.error("error is:",error);
+    console.error("error is:", error);
   }
 };
 
@@ -168,18 +168,20 @@ fetchArrowFun();
 const nums = [1, 2, 3];
 
 const doubled = nums.map((n) => n * 2);
+const normal = nums.map((n) => n * 2);
 
-
+console.log("doubled:", doubled);
+console.log("normal:", normal);
 
 // filter() - remove some items
 
 const even = nums.filter((n) => n % 2 === 0);
-console.log(even);
+console.log("even:", even);
 
 // reduce() - sum  or combine
 
 const total = nums.reduce((acc, curr) => acc + curr, 0);
-console.log(total);
+console.log("total:",total);
 
 // Modren JS Features
 
