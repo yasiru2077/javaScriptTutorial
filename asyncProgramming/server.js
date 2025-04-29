@@ -23,7 +23,7 @@ const pizzaList = {
   hawaiian: 700.0,
   bbq_chicken: 750.0,
   mushroom: 580.0,
-  custom: "variable",
+  custom: 1000,
   meat_lovers: 800.0,
   buffalo_chicken: 720.0,
   spinach_and_feta: 630.0,
