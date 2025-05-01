@@ -5,7 +5,6 @@
 //   console.log(`Async`);
 // }, 100);
 
-
 // console.log(`synchronous`);
 
 // console.log(a);
@@ -45,4 +44,15 @@
 // setTimeout(() => {
 //   getPizzaList(pizzaList);
 // }, 1000);
+
+// synchronous
+
+console.log(" I ");
+console.log(" eat ");
+console.log(" ice cream");
+console.log(" with a ");
+console.log(" spoon ");
+
+setTimeout(() => {},3000);
+
 
