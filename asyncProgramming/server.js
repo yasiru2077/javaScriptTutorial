@@ -53,6 +53,47 @@ console.log(" ice cream");
 console.log(" with a ");
 console.log(" spoon ");
 
-setTimeout(() => {},3000);
+setTimeout(() => {
+  console.log("hi mom");
+}, 3000);
 
+// callback
 
+// example1
+
+function one(call_two) {
+  console.log("step 1 complete. please call step 2");
+  call_two();
+}
+
+function two() {
+  console.log("step 2");
+}
+
+one(two);
+
+// example2
+
+let stocks = {
+  Fruits: ["strawberry", "grapes", "banana", "apple"],
+  liquid: ["water", "ice"],
+  holder: ["cone", "cup", "stick"],
+  toppings: ["chocolate", "peanuts"],
+};
+
+let order = (Fruit_name, call_production) => {
+  //   console.log("order placed, please call production");
+  setTimeout(() => {
+    console.log(`${stocks.Fruits[Fruit_name]} was selected.`);
+    call_production();
+}, 2000);
+};
+
+let production = () => {
+  //   console.log("order received, starting production");
+  setTimeout(() => {
+    console.log("production has started");
+  }, 0);
+};
+
+order(0, production);
