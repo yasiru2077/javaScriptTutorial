@@ -55,7 +55,7 @@ console.log(" spoon ");
 
 setTimeout(() => {
   console.log("hi mom");
-}, 3000);
+}, 0);
 
 // callback
 
@@ -86,14 +86,89 @@ let order = (Fruit_name, call_production) => {
   setTimeout(() => {
     console.log(`${stocks.Fruits[Fruit_name]} was selected.`);
     call_production();
-}, 2000);
+  }, 2000);
 };
 
 let production = () => {
   //   console.log("order received, starting production");
   setTimeout(() => {
     console.log("production has started");
+    setTimeout(() => {
+      console.log("the fruits has been chopped.");
+      setTimeout(() => {
+        console.log(`${stocks.liquid[0]} and ${stocks.liquid[1]} was added`);
+        setTimeout(() => {
+          console.log("the machine was started");
+          setTimeout(() => {
+            console.log(`ice cream was placed on a ${stocks.holder[0]}`);
+            setTimeout(() => {
+              console.log(`${stocks.toppings[0]} was added as toppings`);
+              setTimeout(() => {
+                console.log("serve ice cream");
+                console.log("/////Promises////");
+              }, 2000);
+            }, 3000);
+          }, 2000);
+        }, 1000);
+      }, 1000);
+    }, 2000);
   }, 0);
 };
 
 order(0, production);
+
+// promises
+
+let is_shop_open = true;
+
+let orderPromise = (time, work) => {
+  return new Promise((resolve, reject) => {
+    if (is_shop_open) {
+      setTimeout(() => {
+        resolve(work());
+      }, time);
+    } else {
+      setTimeout(() => {
+        reject(console.log("our shope is closed"));
+      }, time);
+    }
+  });
+};
+
+orderPromise(15000, () => console.log(`${stocks.Fruits[0]} was selected.`))
+  .then(() => {
+    return orderPromise(0, () => console.log("Production has started"));
+  })
+  .then(() => {
+    return orderPromise(2000, () =>
+      console.log("the fruits has been chopped.")
+    );
+  })
+  .then(() => {
+    return orderPromise(1000, () => {
+      console.log("the machine was started");
+    });
+  })
+  .then(() => {
+    return orderPromise(2000, () => {
+      console.log(`ice cream was placed on a ${stocks.holder[0]}`);
+    });
+  })
+  .then(() => {
+    return orderPromise(3000, () => {
+      console.log(`${stocks.toppings[0]} was added as toppings`);
+    });
+  })
+  .then(() => {
+    return orderPromise(1000, () => {
+      console.log("serve ice cream");
+    });
+  })
+  .catch(() => {
+    console.log("Customer left");
+  })
+  .finally(() => {
+    console.log("day ended, shop is closed.");
+  });
+
+// async + await
