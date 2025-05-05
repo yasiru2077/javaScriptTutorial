@@ -173,15 +173,23 @@ orderPromise(15000, () => console.log(`${stocks.Fruits[0]} was selected.`))
 
 // async + await
 
+let topping_choice = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("which  toping would you love?");
+    }, 3000);
+  });
+};
+
 async function orderAsync() {
   try {
-    console.log("cat");
+    return abc;
   } catch (error) {
-    console.log("code doesnt e");
+    console.log("code doesn't exist");
   } finally {
     console.log("code runs any where");
   }
 }
 
-orderAyncMethod()
+orderAsync();
 
