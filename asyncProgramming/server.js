@@ -191,5 +191,9 @@ async function orderAsync() {
   }
 }
 
-orderAsync();
+orderAsync().then(() => {
+  console.log("hi candy");
+});
+
+
 
