@@ -172,3 +172,25 @@ orderPromise(15000, () => console.log(`${stocks.Fruits[0]} was selected.`))
   });
 
 // async + await
+
+let asyncOrder = () => {
+  return new Promise((resolve, reject) => {
+    if (is_shop_open) {
+      resolve();
+    } else {
+      reject();
+    }
+  });
+};
+
+async function orderAyncMethod() {
+  try {
+    console.log("cat");
+  } catch (error) {
+    console.log("dog");
+  } finally {
+    console.log("code runs any where");
+  }
+}
+
+orderAyncMethod()
