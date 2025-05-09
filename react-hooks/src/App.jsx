@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Usestate from "./pages/usestate";
 import Useeffect from "./pages/useeffect";
+import Usecontext from "./pages/usecontext";
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
       <Usestate />
       <br />
       <Useeffect />
+      <br />
+      <Usecontext />
     </>
   );
 }
