@@ -5,7 +5,8 @@ import "./App.css";
 import Usestate from "./pages/usestate";
 import Useeffect from "./pages/useeffect";
 import Usecontext from "./pages/usecontext";
-import Usereducer from "./pages/usereducer";
+import UseReducer from "./pages/useReducer";
+import UseRef from "./pages/useRef";
 
 function App() {
   return (
@@ -16,7 +17,9 @@ function App() {
       <br />
       <Usecontext />
       <br />
-      <Usereducer />
+      <UseReducer />
+      <br />
+      <UseRef/>
     </>
   );
 }
